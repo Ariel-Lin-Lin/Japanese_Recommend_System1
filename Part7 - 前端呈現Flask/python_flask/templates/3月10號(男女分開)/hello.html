@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+   <head>
+   <script>
+   $("#dialog").dialog({
+		autoOpen: false,
+		modal: true,
+		buttons : {
+		"Confirm" : function() {
+		alert("You have confirmed!");
+		},
+		"Cancel" : function() {
+		$(this).dialog("close");
+		}
+		}
+		});
+		$("#callConfirm").on("click", function(e) {
+		e.preventDefault();
+		$("#dialog").dialog("open");
+		});
+
+   </script>
+   <script src="jquery.min.js"></script>
+   </head>
+   <body>
+   
+      <h1>Hello {{ name }}</h1>
+	  <button id="callConfirm">Confirm!</button>
+	  <div id="dialog" title="Confirmation Required">
+	  Are you sure about this?
+	  </div>
+    <header>
+        <input type="checkbox" value="2" name="Product"> 商品 1<br>
+    </header>
+   <form>
+    <INPUT type=checkbox name=interst>網站管理員
+    <INPUT type=checkbox name=interst>網站排名專家
+    <INPUT type=checkbox name=interst>補教業
+    <INPUT type=checkbox name=interst>行銷業務
+    <INPUT type=checkbox name=interst>房仲業務
+    </form>
+   </body>
+</html>
